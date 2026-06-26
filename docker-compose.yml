@@ -1,0 +1,13 @@
+services:
+  game-info-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gta6_game_info
+    ports:
+      - "8001:8001"
+    restart: unless-stopped
+    environment:
+      - ENV=production
+
+  # Future services (Media, TechSpecs, Redis) will be appended here seamlessly
